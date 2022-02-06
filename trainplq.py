@@ -136,7 +136,7 @@ for it in range(0,10):
 	reduce_lr=LearningRateScheduler(scheduler)
 
 	history = model.fit_generator(
-		data_gen(id_img_train, batch_size,p_train=trainimage,p_test =trainlab,augment=True),
+		data_gen(id_img_train, batch_size,p_train=trainimage,p_test =trainlab,augment=False),
 		validation_data=data_gen2(id_img_test, batch_size,p_train=trainimage,p_test =trainlab,augment=False),
 		epochs=100, verbose=2,callbacks=[checkpoint],steps_per_epoch=len(id_img_train) // batch_size,validation_steps=1)
             
